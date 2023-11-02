@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: easy-transport
+  cloud:
+    nacos:
+      server-addr: 172.16.128.7:8848
+      username: nacos
+      password: nacos
+      discovery:
+        namespace: @nacos.namespace@
+      config:
+        file-extension: yml
+        namespace: @nacos.namespace@
+    inetutils:
+      preferred-networks: 172.16

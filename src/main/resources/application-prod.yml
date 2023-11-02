@@ -1,0 +1,54 @@
+server:
+  port: 8480
+  servlet:
+    context-path: /easy-transport/api
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 2
+      max-active: 8
+      min-idle: 2
+      maxWait: 60000
+      url: jdbc:mysql://172.16.128.7:3306/hslms?serverTimezone=Asia/Shanghai
+      username: root
+      password: Oracle
+      filters: stat,wall
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+    show-sql: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://work.zj-hanson.com/easy-oauth2
+        opaquetoken:
+          client-id:
+          client-secret:
+
+baidu:
+  sms:
+    endpoint: http://smsv3.bj.baidubce.com
+    access_key_id: d127e2c36b8d4bc4b6fc2db2dd9f50e3
+    access_key_secret: dcba4c15eb80455a84f54ebf5c70cc90
+    signature_id: sms-sign-zLPDZt19907
+    template_id: sms-tmpl-HGxXIY67670
+
+tencent:
+  mp:
+    wx52aa1883409dd7de:
+      appID: wx52aa1883409dd7de
+      appSecret: 7ec42a3d8a45e4887ef3bb58df7441b3
+      token:
+    wx67f3d33b78b2ee91:
+      appID: wx67f3d33b78b2ee91
+      appSecret: b7e03123942c09a6c4d8b092647ce156
+      token:
